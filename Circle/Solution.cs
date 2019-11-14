@@ -12,14 +12,14 @@ namespace Circle
 
     public struct CircleEdge : IComparable<CircleEdge>
     {
+        private long X { get; }
+        public CircleSide Side { get; }
+
         public CircleEdge(long x, CircleSide side)
         {
             X = x;
             Side = side;
         }
-
-        private long X { get; }
-        public CircleSide Side { get; }
 
         public int CompareTo(CircleEdge other)
         {
@@ -38,7 +38,7 @@ namespace Circle
         // Codility forces this naming
         // ReSharper disable InconsistentNaming
         public int solution(int[] A)
-            // ReSharper enable InconsistentNaming
+        // ReSharper enable InconsistentNaming
         {
             var edges = new List<CircleEdge>();
             // O(n)
